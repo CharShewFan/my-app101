@@ -10,12 +10,8 @@ function App() {
   return (
     <div>
       <Header>
-        
       </Header>
-      <HelloWorld name="kevin"></HelloWorld>
       <Footer></Footer>
-    <Counter>
-    </Counter>
     </div>
   );
 };

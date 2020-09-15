@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './tailwind.css'; //一定要记得引入 tailwind 的 CSS 否则所有写在 className 的属性都不会生效
 
 ReactDOM.render(
   <React.StrictMode>
