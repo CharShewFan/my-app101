@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from '@fortawesome/free-solid-svg-icons';
-import {useTransition,animated} from 'react-spring'
+import {useTransition,animated} from 'react-spring';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link //link has a props : to ,send us to the link we want
+  }from "react-router-dom"; // avoid typing BrowserRouter by using this,just <Router/>
+import NavMenu from "./NavMenu";
+
+
+
+
+
 
 function Navigation(){
     const [showMenu,setShowMenu] = useState(false); //conditional redening
@@ -25,6 +37,8 @@ function Navigation(){
                 onClick={()=>setShowMenu(!showMenu)}/>
 
             </span>
+
+
             {
                 maskTransitions.map(({item,key,props})=>
                     item &&
@@ -32,30 +46,28 @@ function Navigation(){
                         key={{key}}
                         style={props}
                         className="bg-black-t-50 fixed top-0 left-0 w-full h-full z-50"
-                        onClick={()=>setShowMenu(false)}
-                    >
+                        onClick={()=>setShowMenu(false)}>
+                        
                         this is menu
+
                     </animated.div>)
             }
 
             {
-                menuTransitions.map(({item,key,props})=>
+                menuTransitions.map(
+                    ({item,key,props})=>
                 item &&
                     <animated.div
                     key={{key}}
                     style={props}
-                    className='fixed bg-white top-0 left-0 w-4/5 h-full z-50 shadow p-3'
-                    > 
-                    <span className="font-bold">
-                        The Menu 
+                    className='fixed bg-white top-0 left-0 w-4/5 h-full z-50 shadow p-3'> 
+                    
+                    
 
-                    </span>
-                    <ul>
-                        <li>Home</li>
-                        <li>Search</li>
-                        <li>Views</li>
-                    </ul>
-                    </animated.div>)
+                    <NavMenu closeMenu={() => setShowMenu(!showMenu)}/>
+                    </animated.div>
+                    )
+                    
             }
 
         </nav>
