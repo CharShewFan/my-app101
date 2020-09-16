@@ -3,6 +3,10 @@ import HelloWorld from './components/HelloWorld';
 import Counter  from './components/Counter';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Home from './views/Home';
+import About from "./views/About";
+import Product from "./views/product"
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,14 +29,22 @@ function App() {
       <Switch>
 
         <Route exact path="/">
-          <h1>This is the homepage</h1>
+          <Home></Home>
         </Route>
 
         <Route path="/about">
-          <h1>this is about page</h1>
+          <About></About>          
         </Route>
 
-      </Switch>
+        <Route path="/product">
+          <Product></Product>
+        </Route>
+
+        <Route path="/product/:id">
+          <Product></Product>
+        </Route>
+
+      </Switch> 
 
       <Footer/>
       </Router>

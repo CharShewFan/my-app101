@@ -10,21 +10,15 @@ import {
 function NavMenu(props){
     return(
         <div>
-            <span className="font-bold">
+            <span className="font-bold py-3 block">
                         The Menu 
                     </span>
                     
                     <ul>
-                        <li>
-                            <Link 
-                        to="/" 
-                        className="text-blue-500"
-                        onClick={props.closeMenu}
-                        >Home</Link>
-                        </li>
+                        <li><Link to="/" className="text-blue-500 p-3 border-t border-b block" onClick={props.closeMenu}>Home</Link></li>
 
-                        <li><Link to="/about" className="text-blue-500" onClick={props.closeMenu}>About</Link></li>
-                        <li><Link to="/views" className="text-blue-500" onClick={props.closeMenu}>Views</Link></li>
+                        <li><Link to="/about" className="text-blue-500 p-3 border-t border-b block" onClick={props.closeMenu}>About</Link></li>
+                        <li><Link to="/product" className="text-blue-500 p-3 border-t border-b block" onClick={props.closeMenu}>Product</Link></li>
                     </ul>
         </div>
     )
