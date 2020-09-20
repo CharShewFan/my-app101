@@ -40,9 +40,8 @@ function App() {
           <Product></Product>
         </Route>
 
-        <Route path="/product/:id">
-          <Product></Product>
-        </Route>
+        <Route path={"/products/:id"} component={<Product/>}/>
+        
 
       </Switch> 
 
