@@ -40,7 +40,7 @@ function App() {
           <Product></Product>
         </Route>
 
-        <Route path={"/products/:id"} component={<Product/>}/>
+        <Route path={"/product/3"} component={<Product/>}/>
         
 
       </Switch> 

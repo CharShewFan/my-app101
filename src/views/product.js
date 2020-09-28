@@ -5,9 +5,11 @@ import { useAxiosGet } from '../Hooks/HttpRequests'
 
 
 function Product(){
-    const { id } = useParams()
+    const {id} = useParams();
     // Create your own Mock API: https://mockapi.io/
-    const url = `https://5e9623dc5b19f10016b5e31f.mockapi.io/product/${id}`
+    const url = `https://5f61d44d89dbd70016e18ebc.mockapi.io/product/${id}`
+    const pop = {id}.valueOf()
+    console.log("pop"+ pop)
     
     let product = useAxiosGet(url)
 
@@ -36,7 +38,7 @@ function Product(){
             </h1>
             <div>
                 <img
-                    src={product.data.images[0].imageUrl}
+                    src={product.data.imageUrl}
                     alt={product.data.name}
                 />
             </div>
